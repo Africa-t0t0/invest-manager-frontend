@@ -1,7 +1,22 @@
+import { useState } from "react";
+
 export default function Form() {
+
+    const [formData, setFormData] = useState({
+        card: "",
+        amount: "",
+        date: "",
+        installmentsNumber: ""
+    });
+
     return (
         <>
-            <h1>Testing</h1>
+            <form
+                action=""
+                method="POST"
+            >
+
+            </form>
         </>
     );
 }
