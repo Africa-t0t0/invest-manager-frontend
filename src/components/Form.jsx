@@ -5,9 +5,9 @@ import Select from "./Select";
 export default function Form() {
 
     const cardOptions = [
-        {value: "bci", label: "BCI"},
-        {value: "banchile", label: "Banco de Chile"},
-        {value: "santander", label: "Santander"}
+        { value: "bci", label: "BCI" },
+        { value: "banchile", label: "Banco de Chile" },
+        { value: "santander", label: "Santander" }
     ]
 
     const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ export default function Form() {
     }
 
     const handleFormChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value});
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
     const handleFormSubmit = (e) => {
@@ -49,16 +49,34 @@ export default function Form() {
                 onSubmit={handleFormSubmit}
                 className="space-y-4"
             >
-                <div>
-                    <label htmlFor="" className="block text-sm font-medium">
-                        Card
-                    </label>
-                    <Select
-                        name={"card"}
-                        cardOptions={cardOptions}
-                        onChange={handleFormChange}
-                        selectedOption={formData.card}
-                    />
+                <div className="row flex space-x-4">
+                    <div
+                        className="w-1/2"
+                    >
+                        <label
+                            className="block text-md font-medium"
+                        >
+                            Card
+                        </label>
+
+                        <Select
+                            name={"card"}
+                            cardOptions={cardOptions}
+                            onChange={handleFormChange}
+                            selectedOption={formData.card}
+                        />
+                    </div>
+                    <div className="w-1/2">
+                        <label
+                            className="block text-md font-medium"
+                        >
+                            Value
+                        </label>
+                        <input
+                            className="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="number"
+                        />
+                    </div>
                 </div>
             </form>
         </>
