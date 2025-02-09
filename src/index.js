@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'normalize.css';
-import "react-datepicker/dist/react-datepicker.css";
-
 
 import Index from './components/Index';
 import reportWebVitals from './reportWebVitals';

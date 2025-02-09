@@ -84,15 +84,15 @@ export default function Form() {
                         <label
                             className="block text-md font-medium"
                         >
-                            Value
+                            Amount
                         </label>
                         <input
-                            name="value"
+                            name="amount"
                             className={inputField}
                             type="number"
                             onChange={handleFormChange}
                         />
-                        {errors.value && <p className="text-red-500 text-sm mt-1">{errors.value}</p>}
+                        {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount}</p>}
                     </div>
                     <div
                         className="w-1/4"
@@ -117,7 +117,7 @@ export default function Form() {
                             Installments
                         </label>
                         <input
-                            name="value"
+                            name="installmentsNumber"
                             className={inputField}
                             type="number"
                             onChange={handleFormChange}
