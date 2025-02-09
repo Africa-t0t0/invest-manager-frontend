@@ -1,12 +1,12 @@
-import { inputField, buttonHover } from "../utils/styles";
+import { buttonClass, buttonHover } from "../utils/styles";
 
 export default function Button ({name, onClick, content, className}) {
     let finalClassName;
 
     if (className) {
-        finalClassName = `${className} ${inputField} ${buttonHover}`;
+        finalClassName = `${className} ${buttonClass} ${buttonHover}`;
     } else {
-        finalClassName = `${className} ${inputField}`;
+        finalClassName = `${className} ${buttonClass}`;
     }
 
     return (

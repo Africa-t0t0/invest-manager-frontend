@@ -39,6 +39,10 @@ export default function Form() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
+    const handleDateFormChange = (name, value) => {
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -97,8 +101,9 @@ export default function Form() {
                             Date
                         </label>
                         <CustomDatePicker
+                            name="date"
                             selectedDate={formData.date}
-                            setSelectedDate={handleFormChange}
+                            setSelectedDate={handleDateFormChange}
                         />
                     </div>
                     <div

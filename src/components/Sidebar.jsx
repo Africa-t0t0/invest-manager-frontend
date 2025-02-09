@@ -1,5 +1,7 @@
 import { useSelection } from "../context/GridContext";
 
+import { sidebarClassName } from "../utils/styles";
+
 const hoverClassName = "hover:text-blue-400"
 
 export default function Sidebar() {
@@ -8,7 +10,7 @@ export default function Sidebar() {
 
     return (
         <>
-            <div className="w-64 bg-gray-900 text-white p-5">
+            <div className={sidebarClassName}>
                 <h1 className="text-2xl font-bold text-center">Sidebar</h1>
                 <ul className="mt-8 space-y-4">
                     <li>
