@@ -29,7 +29,9 @@ export default function Form() {
         let newErrors = {};
 
         if (!formData.card.trim()) newErrors.name = "Card number is required";
-        if (!formData.amount) newErrors.amount = "Amount is required"
+        if (!formData.amount) newErrors.amount = "Amount is required";
+        if (!formData.installmentsNumber) newErrors.installmentsNumber = "Installments number cannot be empty";
+        if (!formData.details) newErrors.details = "Details field is required";
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -121,12 +123,14 @@ export default function Form() {
                             onChange={handleFormChange}
                             min="0"
                         />
+                        {errors.installmentsNumber && <p className="text-red-500 text-sm mt-1">{errors.installmentsNumber}</p>}
+
                     </div>
                 </div>
                 <div
                     className="m-11"
                 >
-                <label
+                    <label
                         className="block text-md font-medium"
                     >
                         Details
@@ -137,6 +141,8 @@ export default function Form() {
                         type="text"
                         onChange={handleFormChange}
                     />
+                    {errors.details && <p className="text-red-500 text-sm mt-1">{errors.details}</p>}
+
                 </div>
                 <div
                     className="flex justify-center items-center m-11"
