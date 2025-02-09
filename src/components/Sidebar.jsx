@@ -12,35 +12,35 @@ export default function Sidebar() {
                 <h1 className="text-2xl font-bold text-center">Sidebar</h1>
                 <ul className="mt-8 space-y-4">
                     <li>
-                        <a
+                        <button
                             className={hoverClassName}
                             onClick={() => { setSelectedGrip("default-grid") }}
                         >
                             Home
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             className={hoverClassName}
                             onClick={() => setSelectedGrip("add-movement")}
                         >
                             Add Movement
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             className={hoverClassName}
                             onClick={() => setSelectedGrip("view-movement")}
                         >
                             View Movements
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             className={hoverClassName}
                         >
                             Extras
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>

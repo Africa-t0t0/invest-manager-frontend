@@ -68,6 +68,8 @@ export default function Form() {
                             onChange={handleFormChange}
                             selectedOption={formData.card}
                         />
+                        {errors.card && <p className="text-red-500 text-sm mt-1">{errors.card}</p>}
+
                     </div>
                     <div className="w-1/2">
                         <label
@@ -76,9 +78,13 @@ export default function Form() {
                             Value
                         </label>
                         <input
+                            name="value"
                             className={inputField}
                             type="number"
+                            onChange={handleFormChange}
                         />
+                        {errors.value && <p className="text-red-500 text-sm mt-1">{errors.value}</p>}
+
                     </div>
                 </div>
             </form>

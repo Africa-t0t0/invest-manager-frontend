@@ -8,7 +8,6 @@ export function useSelection () {
     return useContext(GridContext)
 }
 
-// Proveedor de contexto
 export function GridContextProvider ({children}) {
     const [selectedGrid, setSelectedGrip] = useState("default-grid");
 
