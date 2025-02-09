@@ -1,6 +1,14 @@
 import { useState } from "react";
 
+import Select from "./Select";
+
 export default function Form() {
+
+    const cardOptions = [
+        {value: "bci", label: "BCI"},
+        {value: "banchile", label: "Banco de Chile"},
+        {value: "santander", label: "Santander"}
+    ]
 
     const [formData, setFormData] = useState({
         card: "",
@@ -21,13 +29,37 @@ export default function Form() {
         return Object.keys(newErrors).length === 0;
     }
 
+    const handleFormChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value});
+    }
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        if (validation()) {
+            // logic for validation
+        }
+    }
+
     return (
         <>
             <form
                 action=""
                 method="POST"
+                onSubmit={handleFormSubmit}
+                className="space-y-4"
             >
-
+                <div>
+                    <label htmlFor="" className="block text-sm font-medium">
+                        Card
+                    </label>
+                    <Select
+                        name={"card"}
+                        cardOptions={cardOptions}
+                        onChange={handleFormChange}
+                        selectedOption={formData.card}
+                    />
+                </div>
             </form>
         </>
     );
