@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import Button from "./Button";
 import CustomDatePicker from "./DatePicker";
 import Select from "./Select";
 
@@ -18,7 +19,8 @@ export default function Form() {
         card: "",
         amount: "",
         date: new Date(),
-        installmentsNumber: ""
+        installmentsNumber: "",
+        details: ""
     });
 
     const [errors, setErrors] = useState({});
@@ -53,7 +55,7 @@ export default function Form() {
                 onSubmit={handleFormSubmit}
                 className="space-y-4"
             >
-                <div className="row flex space-x-4">
+                <div className="row flex space-x-4 m-12">
                     <div
                         className="w-1/4"
                     >
@@ -99,6 +101,47 @@ export default function Form() {
                             setSelectedDate={handleFormChange}
                         />
                     </div>
+                    <div
+                        className="w-1/4"
+                    >
+                        <label
+                            className="block text-md front-medium"
+                        >
+                            Installments
+                        </label>
+                        <input
+                            name="value"
+                            className={inputField}
+                            type="number"
+                            onChange={handleFormChange}
+                            min="0"
+                        />
+                    </div>
+                </div>
+                <div
+                    className="m-11"
+                >
+                <label
+                        className="block text-md font-medium"
+                    >
+                        Details
+                    </label>
+                    <input
+                        name="details"
+                        className={inputField}
+                        type="text"
+                        onChange={handleFormChange}
+                    />
+                </div>
+                <div
+                    className="flex justify-center items-center m-11"
+                >
+                    <Button
+                        name="submit-button"
+                        className="w-auto px-6 py-2"
+                        onClick={handleFormSubmit}
+                        content="Submit"
+                    />
                 </div>
             </form>
         </>
