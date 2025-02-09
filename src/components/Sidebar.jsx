@@ -4,7 +4,7 @@ const hoverClassName = "hover:text-blue-400"
 
 export default function Sidebar() {
 
-    const { setSelectedOption } = useSelection();
+    const { setSelectedGrip } = useSelection();
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function Sidebar() {
                     <li>
                         <a
                             className={hoverClassName}
-                            onClick={() => { setSelectedOption("default-grid") }}
+                            onClick={() => { setSelectedGrip("default-grid") }}
                         >
                             Home
                         </a>
@@ -22,7 +22,7 @@ export default function Sidebar() {
                     <li>
                         <a
                             className={hoverClassName}
-                            onClick={() => setSelectedOption("add-movement")}
+                            onClick={() => setSelectedGrip("add-movement")}
                         >
                             Add Movement
                         </a>
@@ -30,7 +30,7 @@ export default function Sidebar() {
                     <li>
                         <a
                             className={hoverClassName}
-                            onClick={() => setSelectedOption("view-movement")}
+                            onClick={() => setSelectedGrip("view-movement")}
                         >
                             View Movements
                         </a>

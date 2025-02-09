@@ -1,7 +1,5 @@
 import { createContext, useContext, useState } from "react";
 
-import Form from "../components/Form";
-
 import { handleGridStates } from "./handleGridStates";
 
 const GridContext = createContext();
@@ -12,14 +10,11 @@ export function useSelection () {
 
 // Proveedor de contexto
 export function GridContextProvider ({children}) {
-    const [selectedOption, setSelectedOption] = useState("default-context");
     const [selectedGrid, setSelectedGrip] = useState("default-grid");
 
-    let gridContent = handleGridStates(selectedOption);
+    let gridContent = handleGridStates(selectedGrid);
 
     const contextObject = {
-        selectedOption,
-        setSelectedOption,
         selectedGrid,
         setSelectedGrip,
         gridContent
