@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import CustomDatePicker from "./DatePicker";
 import Select from "./Select";
 
 import { inputField } from "../utils/styles";
@@ -16,7 +17,7 @@ export default function Form() {
     const [formData, setFormData] = useState({
         card: "",
         amount: "",
-        date: "",
+        date: new Date(),
         installmentsNumber: ""
     });
 
@@ -54,7 +55,7 @@ export default function Form() {
             >
                 <div className="row flex space-x-4">
                     <div
-                        className="w-1/2"
+                        className="w-1/4"
                     >
                         <label
                             className="block text-md font-medium"
@@ -71,7 +72,7 @@ export default function Form() {
                         {errors.card && <p className="text-red-500 text-sm mt-1">{errors.card}</p>}
 
                     </div>
-                    <div className="w-1/2">
+                    <div className="w-1/4">
                         <label
                             className="block text-md font-medium"
                         >
@@ -84,7 +85,19 @@ export default function Form() {
                             onChange={handleFormChange}
                         />
                         {errors.value && <p className="text-red-500 text-sm mt-1">{errors.value}</p>}
-
+                    </div>
+                    <div
+                        className="w-1/4"
+                    >
+                        <label
+                            className="block text-md front-medium"
+                        >
+                            Date
+                        </label>
+                        <CustomDatePicker
+                            selectedDate={formData.date}
+                            setSelectedDate={handleFormChange}
+                        />
                     </div>
                 </div>
             </form>
