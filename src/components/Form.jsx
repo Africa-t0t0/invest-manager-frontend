@@ -56,7 +56,6 @@ export default function Form() {
     return (
         <>
             <form
-                action=""
                 method="POST"
                 onSubmit={handleFormSubmit}
                 className="space-y-4"
@@ -149,7 +148,7 @@ export default function Form() {
                 >
                     <Button
                         name="submit-button"
-                        className="w-auto px-6 py-2"
+                        className="max-w-fit px-3 py-2"
                         onClick={handleFormSubmit}
                         content="Submit"
                     />
